@@ -1,0 +1,11 @@
+    <head>
+        <title>{% if title %}{{ title }} - TKT Faces{% else %}TKT Faces{% endif %}</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+            <img src="../static/tkt-logo.png"><br />
+            Current user: {{ current_user.username }} -- Admin: {{ current_user.is_admin }}
+            <hr />
+            {% block app_content %}{% endblock %}
+            <script src="../static/bundle.js"></script>
+    </body>
